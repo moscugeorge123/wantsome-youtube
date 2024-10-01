@@ -1,0 +1,9 @@
+@use "../variables/sizes";
+
+@mixin icon($size: sizes.$icon) {
+  width: $size;
+  height: $size;
+  min-width: $size;
+  min-height: $size;
+  border-radius: 50%;
+}

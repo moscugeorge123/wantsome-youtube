@@ -1,0 +1,87 @@
+@use "./mixins/flex";
+
+header {
+  @include flex.row(space-between, center);
+
+  height: 56px;
+  padding: 0 16px;
+
+  .logo {
+    @include flex.row(start, center);
+
+    .logo-image {
+      width: 100px;
+
+      .youtube-logo {
+        fill: white;
+      }
+    }
+  }
+
+  .search {
+    @include flex.row();
+
+    > *:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    .input-search {
+      @include flex.row(start, center);
+
+      &:has(input[type="search"]:focus) {
+        input[type="search"],
+        .keyboard {
+          border-color: rgb(22, 48, 216);
+        }
+      }
+
+      input[type="search"] {
+        height: 40px;
+        width: 350px;
+        padding: 0 16px;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+        border: 1px solid rgb(57, 57, 57);
+        border-right: none;
+        background-color: transparent;
+        outline: none;
+      }
+
+      .keyboard {
+        @include flex.row(center, center);
+        height: 40px;
+        padding: 0 5px;
+        color: #ffffff80;
+        border-top: 1px solid rgb(57, 57, 57);
+        border-bottom: 1px solid rgb(57, 57, 57);
+        border-right: 1px solid rgb(57, 57, 57);
+
+        &:hover {
+          color: #ffffffbd;
+          cursor: pointer;
+        }
+      }
+
+      .search-icon {
+        @include flex.row(center, center);
+
+        height: 40px;
+        width: 60px;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+        border: 1px solid rgb(57, 57, 57);
+        border-left: none;
+        background-color: #ffffff10;
+
+        &:hover {
+          background-color: #ffffff20;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .user-area {
+    @include flex.row();
+  }
+}

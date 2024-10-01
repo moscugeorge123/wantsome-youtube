@@ -1,0 +1,71 @@
+@use "./variables/sizes";
+@use "./mixins/flex";
+@use "./mixins/buttons";
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #212121;
+}
+
+.m-icons {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+main {
+  width: 100%;
+  @include flex.row();
+}
+
+// ICONS
+
+.m-icons {
+  &.simple {
+    @include flex.row(center, center);
+    @include buttons.icon();
+
+    &:hover {
+      background-color: #ffffff10;
+      cursor: pointer;
+    }
+  }
+}
+
+// BUTTONS
+
+button {
+  &.icon {
+    @include flex.row(center, center);
+    @include buttons.icon();
+    background-color: #ffffff10;
+    border: none;
+
+    &:hover {
+      background-color: #ffffff20;
+      cursor: pointer;
+    }
+  }
+}
+
+// IMAGES
+
+img {
+  width: 100%;
+}
