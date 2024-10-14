@@ -1,4 +1,40 @@
 .sidebar {
   width: 250px;
   min-width: 250px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top: 10px;
+
+  hr{
+    border: none;
+    height: 1px;
+    background-color: #404041;
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .header-sidebar{
+    font-weight: bold;
+  }
+
+  .item{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height:35px;
+    padding:10px;
+    margin-left:10px;
+
+    img{
+      height:35px;
+      width:35px;
+    }
+  }
+
+  .item:hover{
+    background-color: #ffffff20;
+    border-radius: 10%;
+    cursor: pointer;
+  }
 }
